@@ -1,8 +1,8 @@
 [package]
 name = "brainfuck_vm_rust"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Valentin SAVREUX <dev.bordecraft@protonmail.com>"]
-edition = "2019"
+edition = "2018"
 
 [dependencies]
 clap = "2.33.0"
