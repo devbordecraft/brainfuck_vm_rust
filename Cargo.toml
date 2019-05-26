@@ -2,7 +2,7 @@
 name = "brainfuck_vm_rust"
 version = "0.1.0"
 authors = ["Valentin SAVREUX <dev.bordecraft@protonmail.com>"]
-edition = "2018"
+edition = "2019"
 
 [dependencies]
 clap = "2.33.0"
