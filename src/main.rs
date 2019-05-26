@@ -44,8 +44,6 @@ impl BrainfuckState {
         let mut cpt:usize = 0;
         while cpt < fuck_to_compute.len(){
             let ch = fuck_to_compute[cpt..].chars().next().unwrap();
-            //println!("Current char is {} and current index is {}", ch, self.current_index);
-            //self.print_brainfuck_memory();
             match ch.to_string().as_str(){
                 "+" => {
                     // Incremente la donnée de l'index courant
