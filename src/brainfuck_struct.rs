@@ -45,7 +45,7 @@ impl BrainfuckState {
                     }
                 }
                 _ => {
-                    println!("Symbol cannot be handled");
+                    println!("Symbols cannot be handled")
                 }
             }
             cpt += 1;
