@@ -34,7 +34,6 @@ fn main() {
     fuck_state.compute(&fuck);
     let new_now = Instant::now();
     println!("Executed in {:?} ", new_now.duration_since(now));
-
     println!("State of the VM memory : ");
     fuck_state.print_brainfuck_memory();
 }
