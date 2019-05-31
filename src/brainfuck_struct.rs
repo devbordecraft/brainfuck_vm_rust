@@ -18,7 +18,7 @@ impl BrainfuckState {
                     self.current_vector_memory_state[self.current_index as usize] -= 1;
                 }
                 ">" => {
-                    // Incremente l'index courant
+                    // Incremente l'index courant.
                     self.current_vector_memory_state.push(0);
                     self.current_index += 1;
                 }
