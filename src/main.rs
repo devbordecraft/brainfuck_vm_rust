@@ -4,6 +4,7 @@ mod brainfuck_struct;
 
 use std::fs;
 use clap::{Arg, App};
+use std::time::Instant;
 
 fn main() {
     let matches = App::new("Brainfuck VM")
@@ -29,8 +30,10 @@ fn main() {
         current_index: 0,
     };
 
+    let now = Instant::now();
     fuck_state.compute(&fuck);
-    println!("Executed ! ");
+    let new_now = Instant::now();
+    println!("Executed in {:?} ", new_now.duration_since(now));
 
     println!("State of the VM memory : ");
     fuck_state.print_brainfuck_memory();
