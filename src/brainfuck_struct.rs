@@ -33,7 +33,6 @@ impl BrainfuckState {
                 "[" => {
                     if self.current_vector_memory_state[self.current_index as usize] == 0 {
                         // saute à l'instruction après le ] correspondant si l'octet pointé est à 0.
-                        //println!("Cpt avant {:?}", fuck_to_compute.find("]"));
                         cpt += fuck_to_compute[cpt..fuck_to_compute.len()].find("]").unwrap();
                         continue;
                     }
@@ -41,7 +40,6 @@ impl BrainfuckState {
                 "]" => {
                     if self.current_vector_memory_state[self.current_index as usize] != 0 {
                         //retourne à l'instruction après le [ si l'octet pointé est différent de 0.
-                        //println!("JE veux reculer de {} en arriere ", cpt - fuck_to_compute[0..cpt].rfind("[").unwrap());
                         cpt -= cpt - fuck_to_compute[0..cpt].rfind("[").unwrap();
                         continue;
                     }
