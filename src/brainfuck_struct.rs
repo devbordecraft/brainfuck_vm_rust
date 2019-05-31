@@ -23,7 +23,7 @@ impl BrainfuckState {
                     self.current_index += 1;
                 }
                 "<" => {
-                    // Decremente l'index courant
+                    // Decremente l'index courant.
                     self.current_index -= 1;
                 }
                 "." => {
