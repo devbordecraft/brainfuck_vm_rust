@@ -1,6 +1,7 @@
 extern crate clap;
 
 mod brainfuck_struct;
+mod syntax_checking;
 
 use std::fs;
 use clap::{Arg, App};
@@ -21,7 +22,12 @@ fn main() {
 
     let path = matches.value_of("fuckfile").unwrap();
 
+
     let fuck = read_fuck_file(&path);
+
+    println!("Checking syntax ..");
+    syntax_checking::SyntaxChecking{}.check(&fuck);
+
 
     println!("Execution of : {}", fuck);
 
