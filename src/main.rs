@@ -3,7 +3,7 @@ extern crate clap;
 mod brainfuck_struct;
 mod syntax_checking;
 
-use std::fs;
+use std::{fs, process};
 use clap::{Arg, App};
 use std::time::Instant;
 
@@ -25,11 +25,19 @@ fn main() {
 
     let fuck = read_fuck_file(&path);
 
-    println!("Checking syntax ..");
-    syntax_checking::SyntaxChecking{}.check(&fuck);
+    print!("Checking syntax ...");
+    let check_result = syntax_checking::SyntaxChecking{}.check(&fuck);
+    if check_result == false{
+        eprintln!("Syntax error");
+        process::exit(1);
+    }
+    else {
+        println!("OK")
+    }
 
 
-    println!("Execution of : {}", fuck);
+
+    println!("Execution of : {} \n", fuck);
 
     let mut fuck_state = brainfuck_struct::BrainfuckState {
         current_vector_memory_state: vec![0 ;1],
@@ -39,7 +47,7 @@ fn main() {
     let now = Instant::now();
     fuck_state.compute(&fuck);
     let new_now = Instant::now();
-    println!("Executed in {:?} ", new_now.duration_since(now));
+    println!("\nExecuted in {:?} ", new_now.duration_since(now));
     println!("State of the VM memory : ");
     fuck_state.print_brainfuck_memory();
 }

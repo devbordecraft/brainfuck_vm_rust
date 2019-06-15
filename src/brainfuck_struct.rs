@@ -44,6 +44,7 @@ impl BrainfuckState {
                         continue;
                     }
                 }
+                " "=> {}
                 _ => {
                     println!("Symbols cannot be handled")
                 }
