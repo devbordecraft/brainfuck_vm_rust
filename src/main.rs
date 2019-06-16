@@ -27,8 +27,8 @@ fn main() {
 
     print!("Checking syntax ...");
     let check_result = syntax_checking::SyntaxChecking{}.check(&fuck);
-    if check_result == false{
-        eprintln!("Syntax error");
+    if check_result != 0{
+        println!("ERROR !");
         process::exit(1);
     }
     else {
